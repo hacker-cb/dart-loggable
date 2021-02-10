@@ -1,5 +1,7 @@
 import 'package:logging/logging.dart';
 
-class Loggable {
-  Logger get log => Logger(runtimeType.toString());
+mixin Loggable {
+  Logger get log => logName('$runtimeType');
+
+  static Logger logName(String name) => Logger(name);
 }
